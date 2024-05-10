@@ -182,6 +182,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+.input-field {
+    color: gray; /* Warna default untuk placeholder */
+}
+
+.input-field.color-black {
+    color: black; /* Warna untuk pilihan pengguna */
+}
 
 .form-group {
     margin-bottom: 20px;

@@ -1,4 +1,10 @@
 
+body {
+    background-image: url('assets/worlds.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(115, 6, 10, 0.925);
+}
 /*=============================*/
 /* Navbar */
 /*=============================*/
@@ -151,12 +157,12 @@
 /*=============================*/
 /* Carousel /Slideshow*/
 /*=============================*/
+
 #carousel-container {
-    position: relative;
+    display: flex;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
-    margin-top: 0;
 }
 
 .carousel-slide {
@@ -194,10 +200,14 @@
 }
 
 .carousel-content {
-    position: absolute;
+    position: absolute; /* Ubah dari fixed ke absolute */
     top: 50%;
+    left: 0; /* Mengubah dari transform ke left untuk align ke kiri */
     transform: translateY(-50%);
     color: #ffff;
+    width: 100%; /* Menambahkan lebar 100% agar elemen di dalamnya bisa align ke kiri */
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+    padding-left: 15px; /* Padding kiri untuk menjaga konten tidak terlalu menempel ke tepi */
 }
 
 .buttons {
@@ -247,13 +257,31 @@
     background-color: #730609;
 }
 
+/* Penyesuaian untuk prev dan next */
+.prev, .next {
+    top: 10%;
+    z-index: 10; 
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Penyesuaian untuk dots */
+.dots {
+    position: absolute;
+    bottom: 10%; /* Menyesuaikan posisi bottom untuk dots */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Memastikan dots berada di atas gambar */
+}
+
 .prev,
 .next {
     cursor: pointer;
     color: #ffffff;
     font-size: 36px;
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -265,21 +293,20 @@
     right: 10px;
 }
 
-@media (max-width: 430px) {
-.carousel-content{
-    
-
-}
+@media screen and (max-width: 430px) {
     .carousel-content .buttons .btn{
-        justify-content: left;
-        align-items: start;
-        margin-left: -80px;
+        margin-left: 0;
+        display: block;
+        width: 30%;
+        text-align: center;
     }
     .dots {
-        margin-bottom: 20%;
+        display: none;
     }
     .carousel-content h1 {
-        font-size: 3vh;
+        display: none;
+        font-size: 1vh;
+        text-align: center;
     }
     .carousel-content p {
         display: none;
@@ -288,6 +315,14 @@
         box-sizing: border-box; /* Ini memastikan padding dan border termasuk dalam lebar total */
         padding: 0 15px; /* Ini menambahkan sedikit ruang di sisi kiri dan kanan teks */
     }
+    .prev,
+    .next {
+    display: none;
+    }
+    .buttons {
+    display: none;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -299,29 +334,19 @@
         font-size: 2vh;
     }
     .dots {
-        padding-bottom: 5%;
+        padding-bottom: 0;
+        bottom: 40%;
     }
-
-}
-
-/* Media Queries */
-@media only screen and (max-width: 768px) {
-
-    .carousel-content h1,
-    .carousel-content p {
-        margin-left: 20px;
-    }
-
-    .dots {
-        bottom: 230px;
-    }
-
     .prev,
-    .next {
-        bottom: 180px;
-    }
+.next {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 36px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
 }
-
+}
 
 
 /*=============================*/
@@ -453,7 +478,7 @@
 .card-text {
     font-size: 16px;
     color: #000000;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .icon {
@@ -466,38 +491,55 @@
     margin-bottom: 30px;
 
 }
-@media (max-width: 430px) {
-    .card-text{
-        font-size: 1.3vh;
-    }
+@media (max-width: 768px) {
     .row {
-        margin-right: 10px;
-        margin-left: 75px;
-
+        margin-left: 0; /* Adjusted to remove any unnecessary horizontal space */
+        margin-right: 0;
+        justify-content: center; /* Centers the content */
     }
 
     .card-column {
-        width: 100%;
-        margin-left: 0px;
-        padding-left: 7%;
+        width: 100%; /* Full width of the container */
+        margin: 0; /* Reset margin to ensure consistency */
+        padding: 0; /* Reset padding to ensure consistency */
         text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .card {
+        max-width: none; /* Remove max-width restriction */
     }
 }
-@media screen and (max-width: 768px) {
-    .row {
-        margin-right: 10px;
-        margin-left: 75px;
 
+@media (max-width: 430px) {
+    .card-text {
+        padding: 0;
+        margin: 0;
+        font-size: 1vh; /* Adjust font size for readability */
     }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+    .card-text2{
+        display: none;
+    }
+    
 
     .card-column {
         width: 100%;
-        margin-left: 0px;
-        padding-left: 7%;
+        margin: 0;
+        padding: 0;
         text-align: center;
+        margin-top: 0;
+        margin-bottom: 10%;
     }
 
-
+    .card {
+        max-width: none;
+    }
 }
 
 
@@ -600,6 +642,40 @@
     text-decoration: none;
     border-radius: 8px;
 }
+/* Penyesuaian untuk viewport 768px ke bawah */
+@media (max-width: 768px) {
+    .container-features .card .imgBx img {
+        width: 100%; /* Menetapkan lebar gambar menjadi penuh sesuai kontainer */
+        height: auto; /* Menetapkan tinggi gambar menjadi otomatis sesuai rasio aspek */
+    }
+
+    .container-features .card .Content {
+        padding: 0 15px; /* Padding lebih kecil */
+    }
+
+    .container-features .card .Content h2, 
+    .container-features .card .Content p {
+        font-size: smaller; /* Sesuaikan ukuran font */
+    }
+}
+
+/* Penyesuaian untuk viewport 430px ke bawah */
+@media (max-width: 430px) {
+    .container-features .card .imgBx img {
+        width: 100%; /* Menetapkan lebar gambar menjadi penuh sesuai kontainer */
+        height: auto; /* Menetapkan tinggi gambar menjadi otomatis sesuai rasio aspek */
+    }
+
+    .container-features .card .Content {
+        padding: 0 15px; /* Padding lebih kecil */
+    }
+
+    .container-features .card .Content h2, 
+    .container-features .card .Content p {
+        font-size: smaller; /* Sesuaikan ukuran font */
+    }
+}
+
 
 
 /*=============================*/

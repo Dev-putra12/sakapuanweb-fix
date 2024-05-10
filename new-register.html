@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>registration as Volunteer</title>
-        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="register.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Import font Montserrat for Headings -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
         <!-- Import font Open Sans for Subheadings -->
@@ -22,12 +23,12 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <a class="navbar-brand" href="Homepage.html"><img src="assets/Logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="newhomepage.html"><img src="assets/Logo.png" alt="Logo"></a>
                 <button class="navbar-toggler" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="Homepage.html" class="nav-link">Home</a></li>
+                    <li><a href="newnewhomepage.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="new-register.html" class="nav-link">Register</a></li>
                     <li><a href="new-donate.html" class="donate-btn">Donate</a></li>
@@ -52,8 +53,8 @@
                 <input type="text" id="lastname" name="lastname" placeholder="Last Name" class="input-field" required>
             </div>
             <div class="form-group">
-                <select id="nationality" name="nationality" class="input-field" required>
-                    <option value="empty">Nationality</option>
+                <select id="nationality" name="nationality" class="input-field" required onchange="changeColor(this)">
+                    <option value="empty" style="color: gray;">Nationality</option>
                     <option value="Indonesia">Indonesia</option>
                     <option value="Malaysia">Malaysia</option>
                     <option value="Singapore">Singapore</option>
@@ -136,9 +137,7 @@
         <div class="copyright">@2024 Sakapuan.All rights reserved.</div>
     </footer>
     <!-- Footer end-->
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <script src="script.js"></script> 
     <script src="handle-volunteer.js"></script> <!-- JavaScript file -->
 </body>
 </html>

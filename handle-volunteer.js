@@ -1,3 +1,17 @@
+function changeColor(select) {
+    if (select.value === "empty") {
+        select.style.color = 'gray';
+    } else {
+        select.style.color = 'black';
+    }
+}
+
+// Initialize color on page load
+window.onload = function() {
+    var select = document.getElementById('nationality');
+    changeColor(select);
+};
+
 $(document).ready(function () {
     const registerForm = $('#registerForm');
     const modalSuccess = $('#modalSuccess');
@@ -116,4 +130,5 @@ $(document).ready(function () {
     function saveFormData(data) {
         console.log('Data saved:', data);
     }
+    
 });
