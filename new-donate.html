@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="donate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Import font Open Sans for Subheadings -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Import font Roboto for Main Content -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Import font Nunito for Footer -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <!-- Import font Poppins for Header -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Import Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+        <!-- navigasi Bar start-->
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="Homepage.html"><img src="assets/Logo.png" alt="Logo"></a>
+                    <button class="navbar-toggler" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="Homepage.html" class="nav-link" target="_top">Home</a></li>
+                        <li><a href="about.html" class="nav-link" target="_top">About</a></li>
+                        <li><a href="new-register.html" class="nav-link" target="_top">Register</a></li>
+                        <li><a href="new-donate.html" class="donate-btn" target="_top">Donate</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Navigasi Bar end-->
+    <main>
+        <!-- Donate start-->
+        <div class="description">
+            <h2 style="margin-top: 80px;">DONATE</h2>
+        </div>
+        <div class="donors-register">
+            <div class="image-container">
+                <img src="assets/4185229.jpg" alt="Donate img">
+            </div>
+
+            <div class="container-donors">
+                <h2>Choose an Amount</h2>
+                <form id="donateForm" action="#" method="post">
+                    <div class="amount-buttons">
+                        <div class="payment-option">
+                            <input type="radio" id="amount10" name="payment" value="10" required>
+                            <label for="amount10">$10</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="amount20" name="payment" value="20" required>
+                            <label for="amount20">$20</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="amount30" name="payment" value="30" required>
+                            <label for="amount30">$30</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="amount50" name="payment" value="50" required>
+                            <label for="amount50">$50</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="amount100" name="payment" value="100" required>
+                            <label for="amount100">$100</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="amountOther" name="payment" value="other" required>
+                            <label for="amountOther">Other</label>
+                        </div>
+                    </div>
+                    <div id="otherAmountInput">
+                        <input type="number" id="otherAmount" name="otherAmount" placeholder="Enter amount" min="$1">
+                    </div>
+                    <h2>Your Information</h2>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div>
+                                <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                            </div>
+                            <div>
+                                <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="wish" name="wish" rows="4" placeholder="Wish" required></textarea>
+                    </div>
+
+                    <h2>Payment Details</h2>
+                    <div class="payment-options">
+                        <div class="payment-option1">
+                            <input type="radio" id="paypalPayment" name="paymentMethod" value="paypal" required>
+                            <label for="paypalPayment" class="payment-label paypal-label"></label>
+                        </div>
+
+                        <div class="payment-option1">
+                            <input type="radio" id="mobilebankingPayment" name="paymentMethod" value="mobilebanking"
+                                required>
+                            <label for="mobilebankingPayment" class="payment-label mobilebanking-label"></label>
+                        </div>
+
+                        <div class="payment-option1">
+                            <input type="radio" id="creditcardPayment" name="paymentMethod" value="creditcard" required>
+                            <label for="creditcardPayment" class="payment-label creditcard-label"></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Donate end-->
+
+            <!-- Modal for Success Message start -->
+    <div id="modalSuccess" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h5 class="modal-title">Success</h5>
+            </div>
+            <div class="modal-img">
+                <img src="assets/success.png" alt="Image 1">
+            </div>
+            <div class="modal-body">
+                <div id="receiptInfo">
+                    <p style="margin-bottom: 30px;">Thank you for your donation! Your receipt has been downloaded. You can check it in the download folder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Success Message end -->
+
+            <!-- Footer start-->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="assets/Logo.png" alt="Logo">
+                <p>#BerhatiBeraniBerdikari</p>
+            </div>
+            <div class="contact">
+                <p>Contact Us</p>
+                <ul>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://id.linkedin.com/company/sakapuan">LinkedIn</a>
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/CmxJGRoRGrQdX1Ca8">Google
+                            Maps</a></li>
+                </ul>
+            </div>
+            <div class="follow">
+                <p>Follow Us</p>
+                <ul>
+                    <li><i class="fab fa-tiktok"></i> <a
+                            href="https://www.tiktok.com/@sakapuan?_t=8mB4fwuKNFt&_r=1">TikTok</a></li>
+                    <li><i class="fab fa-instagram"></i> <a
+                            href="https://www.instagram.com/sakapuan?igsh=MWs5aGc4eGxqaGI2ZA==">Instagram</a></li>
+                    <li><i class="fab fa-youtube"></i> <a href="https://www.youtube.com/@sakapuan">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-line"></div>
+        <div class="copyright">@2024 Sakapuan.All rights reserved.</div>
+    </footer>
+    <!-- Footer end-->
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <script src="handle-donate.js"></script> <!-- JavaScript file -->
+</body>
+</html>
