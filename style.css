@@ -957,7 +957,7 @@ footer {
 /* Media query untuk layar dengan lebar maksimal 428px */
 @media (max-width: 430px) {
     .row-founder {
-        margin-left: 0 !important; /* Menghilangkan margin-left pada layar kecil */
+        margin-left: 0 !important; 
         justify-content: center;
     }
 }
