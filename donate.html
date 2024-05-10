@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Import font Montserrat for Headings -->
+    <link rel="stylesheet" href="donate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <!-- Import font Open Sans for Subheadings -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
@@ -19,36 +18,25 @@
     <!-- Import Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<style>
-    body {
-        background-image: url('assets/worlds.png');
-        background-size: cover;
-        background-position: center;
-        background-color: rgba(115, 6, 10, 0.925);
-    }
-</style>
-
 <body>
-
-    <!-- navigasi Bar start-->
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="newhomepage.html"><img src="assets/Logo.png" alt="Logo"></a>
-                <button class="navbar-toggler" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="newhomepage.html" class="nav-link" target="_top">Home</a></li>
-                    <li><a href="about.html" class="nav-link" target="_top">About</a></li>
-                    <li><a href="new-register.html" class="nav-link" target="_top">Register</a></li>
-                    <li><a href="new-donate.html" class="donate-btn" target="_top">Donate</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Navigasi Bar end-->
-
+        <!-- navigasi Bar start-->
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="Homepage.html"><img src="assets/Logo.png" alt="Logo"></a>
+                    <button class="navbar-toggler" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="Homepage.html" class="nav-link" target="_top">Home</a></li>
+                        <li><a href="about.html" class="nav-link" target="_top">About</a></li>
+                        <li><a href="register-volunteer.html" class="nav-link" target="_top">Register</a></li>
+                        <li><a href="donate.html" class="donate-btn" target="_top">Donate</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Navigasi Bar end-->
     <main>
         <!-- Donate start-->
         <div class="description">
@@ -130,14 +118,13 @@
                             <label for="creditcardPayment" class="payment-label creditcard-label"></label>
                         </div>
                     </div>
-                    <button type="submit" style="margin-left: 230px;" class="submit-btn">Submit</button>
+                    <button type="submit" class="submit-btn">Submit</button>
                 </form>
             </div>
         </div>
         <!-- Donate end-->
-    </main>
 
-    <!-- Modal for Success Message start -->
+            <!-- Modal for Success Message start -->
     <div id="modalSuccess" class="modal">
         <div class="modal-content">
             <button class="close-btn" id="closeModal">&times;</button>
@@ -156,7 +143,7 @@
     </div>
     <!-- Modal for Success Message end -->
 
-    <!-- Footer start-->
+            <!-- Footer start-->
     <footer>
         <div class="footer-content">
             <div class="logo">
@@ -188,10 +175,8 @@
         <div class="copyright">@2024 Sakapuan.All rights reserved.</div>
     </footer>
     <!-- Footer end-->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    </main>
+    <script src="script.js"></script> 
     <script src="handle-donate.js"></script> <!-- JavaScript file -->
-
 </body>
-
 </html>
